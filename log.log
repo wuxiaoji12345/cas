@@ -1,0 +1,183 @@
+3F3E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+3F3E .=> phpCAS::client('2.0', '172.16.4.78', 9080, '', false) [index.php:10]
+3F3E .|    => CAS_Client::__construct('2.0', false, '172.16.4.78', 9080, '', false, true) [CAS.php:347]
+3F3E .|    |    Ticket 'ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647' found [Client.php:872]
+3F3E .|    <= ''
+3F3E .<= ''
+3F3E .=> phpCAS::setNoCasServerValidation() [index.php:14]
+3F3E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+3F3E .<= ''
+3F3E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+3F3E .|    Not a logout request [Client.php:1471]
+3F3E .<= ''
+3F3E .=> phpCAS::forceAuthentication() [index.php:16]
+3F3E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+3F3E .|    |    => CAS_Client::isAuthenticated() [Client.php:1085]
+3F3E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1191]
+3F3E .|    |    |    |    no user found [Client.php:1377]
+3F3E .|    |    |    <= false
+3F3E .|    |    |    CAS 2.0 ticket `ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647' is present [Client.php:1225]
+3F3E .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1226]
+3F3E .|    |    |    |     [Client.php:2749]
+3F3E .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2755]
+3F3E .|    |    |    |    |    => CAS_Client::getURL() [Client.php:418]
+3F3E .|    |    |    |    |    |    Final URI: http://ssodemo.test.com/cas/index.php [Client.php:3074]
+3F3E .|    |    |    |    |    <= 'http://ssodemo.test.com/cas/index.php'
+3F3E .|    |    |    |    <= 'http://172.16.4.78:9080/serviceValidate?service=http%3A%2F%2Fssodemo.test.com%2Fcas%2Findex.php'
+3F3E .|    |    |    |    => CAS_Client::_readURL('http://172.16.4.78:9080/serviceValidate?service=http%3A%2F%2Fssodemo.test.com%2Fcas%2Findex.php&ticket=ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647', NULL, NULL, NULL) [Client.php:2764]
+3F3E .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+3F3E .|    |    |    |    |    |    Response Body: 
+3F3E .|    |    |    |    |    |    
+3F3E .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+3F3E .|    |    |    |    |    |    	<cas:authenticationSuccess>
+3F3E .|    |    |    |    |    |    		<cas:user>test001</cas:user>
+3F3E .|    |    |    |    |    |            <cas:attributes>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:containerId>test</cas:containerId>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:binduserlist></cas:binduserlist>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:memberOf>[Ljava.lang.Object;@abe0abe</cas:memberOf>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:cn>test</cas:cn>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:user_name>test</cas:user_name>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |                    <cas:uid>test001</cas:uid>
+3F3E .|    |    |    |    |    |                
+3F3E .|    |    |    |    |    |            </cas:attributes>
+3F3E .|    |    |    |    |    |    
+3F3E .|    |    |    |    |    |    
+3F3E .|    |    |    |    |    |    	</cas:authenticationSuccess>
+3F3E .|    |    |    |    |    |    </cas:serviceResponse>
+3F3E .|    |    |    |    |    |    
+3F3E .|    |    |    |    |    |     [CurlRequest.php:82]
+3F3E .|    |    |    |    |    <= true
+3F3E .|    |    |    |    <= true
+3F3E .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2816]
+3F3E .|    |    |    |    |    Found nested jasig style attributes [Client.php:2901]
+3F3E .|    |    |    |    |    Attribute [containerId] = test [Client.php:2905]
+3F3E .|    |    |    |    |    Attribute [binduserlist] =  [Client.php:2905]
+3F3E .|    |    |    |    |    Attribute [memberOf] = [Ljava.lang.Object;@abe0abe [Client.php:2905]
+3F3E .|    |    |    |    |    Attribute [cn] = test [Client.php:2905]
+3F3E .|    |    |    |    |    Attribute [user_name] = test [Client.php:2905]
+3F3E .|    |    |    |    |    Attribute [uid] = test001 [Client.php:2905]
+3F3E .|    |    |    |    <= ''
+3F3E .|    |    |    |    Storing Proxy List [Client.php:2825]
+3F3E .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2828]
+3F3E .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+3F3E .|    |    |    |    <= true
+3F3E .|    |    |    |    => CAS_Client::_renameSession('ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647') [Client.php:2859]
+3F3E .|    |    |    |    |    Session ID: ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647 [Client.php:3184]
+3F3E .|    |    |    |    |    Restoring old session vars [Client.php:3187]
+3F3E .|    |    |    |    <= ''
+3F3E .|    |    |    <= true
+3F3E .|    |    |    CAS 2.0 ticket `ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647' was validated [Client.php:1227]
+3F3E .|    |    |    => CAS_Client::getURL() [Client.php:1281]
+3F3E .|    |    |    <= 'http://ssodemo.test.com/cas/index.php'
+3F3E .|    |    |    Prepare redirect to : http://ssodemo.test.com/cas/index.php [Client.php:1281]
+3F3E .|    |    |    => CAS_Client::getURL() [Client.php:1282]
+3F3E .|    |    |    <= 'http://ssodemo.test.com/cas/index.php'
+3F3E .|    |    |    exit()
+3F3E .|    |    |    -
+3F3E .|    |    -
+3F3E .|    -
+3BB7 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+3BB7 .=> phpCAS::client('2.0', '172.16.4.78', 9080, '', false) [index.php:10]
+3BB7 .|    => CAS_Client::__construct('2.0', false, '172.16.4.78', 9080, '', false, true) [CAS.php:347]
+3BB7 .|    <= ''
+3BB7 .<= ''
+3BB7 .=> phpCAS::setNoCasServerValidation() [index.php:14]
+3BB7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+3BB7 .<= ''
+3BB7 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+3BB7 .|    Not a logout request [Client.php:1471]
+3BB7 .<= ''
+3BB7 .=> phpCAS::forceAuthentication() [index.php:16]
+3BB7 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+3BB7 .|    |    => CAS_Client::isAuthenticated() [Client.php:1085]
+3BB7 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1191]
+3BB7 .|    |    |    |    user = `test001' [Client.php:1367]
+3BB7 .|    |    |    <= true
+3BB7 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1208]
+3BB7 .|    |    <= true
+3BB7 .|    |    no need to authenticate [Client.php:1087]
+3BB7 .|    <= true
+3BB7 .<= ''
+F3D3 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F3D3 .=> phpCAS::client('2.0', '172.16.4.78', 9080, '', false) [index.php:10]
+F3D3 .|    => CAS_Client::__construct('2.0', false, '172.16.4.78', 9080, '', false, true) [CAS.php:347]
+F3D3 .|    <= ''
+F3D3 .<= ''
+F3D3 .=> phpCAS::setNoCasServerValidation() [index.php:14]
+F3D3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+F3D3 .<= ''
+F3D3 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+F3D3 .|    Not a logout request [Client.php:1471]
+F3D3 .<= ''
+F3D3 .=> phpCAS::forceAuthentication() [index.php:16]
+F3D3 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+F3D3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1085]
+F3D3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1191]
+F3D3 .|    |    |    |    user = `test001' [Client.php:1367]
+F3D3 .|    |    |    <= true
+F3D3 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1208]
+F3D3 .|    |    <= true
+F3D3 .|    |    no need to authenticate [Client.php:1087]
+F3D3 .|    <= true
+F3D3 .<= ''
+F3D3 .=> phpCAS::logout(array (  'service' => 'http://ssodemo.test.com/cas/index.php',)) [index.php:22]
+F3D3 .|    => CAS_Client::logout(array (  'service' => 'http://ssodemo.test.com/cas/index.php',)) [CAS.php:1467]
+F3D3 .|    |    Prepare redirect to : http://172.16.4.78:9080/logout?service=http%3A%2F%2Fssodemo.test.com%2Fcas%2Findex.php [Client.php:1435]
+F3D3 .|    |    exit()
+F3D3 .|    |    -
+F3D3 .|    -
+6AE4 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6AE4 .=> phpCAS::client('2.0', '172.16.4.78', 9080, '', false) [index.php:10]
+6AE4 .|    => CAS_Client::__construct('2.0', false, '172.16.4.78', 9080, '', false, true) [CAS.php:347]
+6AE4 .|    <= ''
+6AE4 .<= ''
+6AE4 .=> phpCAS::setNoCasServerValidation() [index.php:14]
+6AE4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6AE4 .<= ''
+6AE4 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6AE4 .|    Logout requested [Client.php:1478]
+6AE4 .|    SAML REQUEST: <samlp:LogoutRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="LR-140-mo0oYgmGaWXtYbxeJWUgI7BnMjBgjSyhgJo-1411695487126" Version="2.0" IssueInstant="2014-09-26T09:38:07Z"><saml:NameID xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">@NOT_USED@</saml:NameID><samlp:SessionIndex>ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647</samlp:SessionIndex></samlp:LogoutRequest> [Client.php:1480]
+2739 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+2739 .=> phpCAS::client('2.0', '172.16.4.78', 9080, '', false) [index.php:10]
+2739 .|    => CAS_Client::__construct('2.0', false, '172.16.4.78', 9080, '', false, true) [CAS.php:347]
+2739 .|    <= ''
+2739 .<= ''
+2739 .=> phpCAS::setNoCasServerValidation() [index.php:14]
+2739 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+2739 .<= ''
+2739 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+2739 .|    Not a logout request [Client.php:1471]
+2739 .<= ''
+2739 .=> phpCAS::forceAuthentication() [index.php:16]
+2739 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+2739 .|    |    => CAS_Client::isAuthenticated() [Client.php:1085]
+2739 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1191]
+2739 .|    |    |    |    no user found [Client.php:1377]
+2739 .|    |    |    <= false
+2739 .|    |    |    no ticket found [Client.php:1260]
+2739 .|    |    <= false
+2739 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1094]
+2739 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1398]
+2739 .|    |    |    |    => CAS_Client::getURL() [Client.php:329]
+2739 .|    |    |    |    |    Final URI: http://ssodemo.test.com/cas/index.php [Client.php:3074]
+2739 .|    |    |    |    <= 'http://ssodemo.test.com/cas/index.php'
+2739 .|    |    |    <= 'http://172.16.4.78:9080/login?service=http%3A%2F%2Fssodemo.test.com%2Fcas%2Findex.php'
+2739 .|    |    |    Redirect to : http://172.16.4.78:9080/login?service=http%3A%2F%2Fssodemo.test.com%2Fcas%2Findex.php [Client.php:1404]
+2739 .|    |    |    exit()
+2739 .|    |    |    -
+2739 .|    |    -
+2739 .|    -
+6AE4 .|    Client: 172.16.4.78/172.16.4.78 [Client.php:1488]
+6AE4 .|    Allowed client '172.16.4.78' matches, logout request is allowed [Client.php:1491]
+6AE4 .|    Logout command allowed [Client.php:1504]
+6AE4 .|    Ticket to logout: ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647 [Client.php:1513]
+6AE4 .|    Session id: ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647 [Client.php:1525]
+6AE4 .|    Session ST-178-9WfsHLnGEbVkr7qkGK1j-Kn2y-cas-1411695485647 destroyed [Client.php:1541]
+6AE4 .|    exit()
+6AE4 .|    -
