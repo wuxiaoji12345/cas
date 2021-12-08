@@ -1,0 +1,14 @@
+{
+    "name": "wuxiaoji12345/cas",
+    "description": "cas",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wudaji",
+            "email": "370434384@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
